@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# Shortcuts
+alias dc="cd ~/Documents"
+alias dl="cd ~/Downloads"
+alias dk="cd ~/Desktop"
+alias user="open ~"
+alias g="git"
+
+
+# Zsh
+alias zshconfig="vim ~/.config/.zshrc"
+alias showconfig="bat ~/.config/.zshrc"
+
+alias vim="nvim"
+alias oldvim="\vim"
+
+
+# IP addresses
+alias ip="curl ifconfig.me"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Merge PDF files, preserving hyperlinks
+alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
+
+
+
+
+
+
