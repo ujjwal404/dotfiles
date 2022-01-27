@@ -1,0 +1,23 @@
+[user]
+	email = ujjwal2022.cs19@nsut.ac.in
+	name = Ujjwal
+
+[credential]
+	helper = cache
+[core]
+	excludesfile = /Users/ujjwal/.gitignore
+
+	# Other possible configurations
+	# - Set the default editor (nano, VScode, Vim) 
+	# - Customsize the color output
+	# - Create aliases (shortcut for git subcommands)
+	# - Add endpoint shortcuts for commonly used URLs
+
+[merge]
+	tool = kdiff3
+[alias]
+	ci = commit
+	amend = ci
+	co = checkout
+	ac = commit -am
+	unstage = reset HEAD --
