@@ -14,7 +14,7 @@ alias dl="cd ~/Downloads"
 alias dk="cd ~/Desktop"
 alias user="open ~"
 alias g="git"
-
+alias gpom="git push origin main"
 
 # Zsh
 alias zshconfig="vim ~/.config/.zshrc"
