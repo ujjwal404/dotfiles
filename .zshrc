@@ -1,6 +1,10 @@
 # Root path
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+for file in ~/.{path,zsh_prompt,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # Path to my oh-my-zsh installation.
 export ZSH="/Users/ujjwal/.oh-my-zsh"
@@ -30,14 +34,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-# Personal aliases
-alias zshconfig="vim ~/.config/.zshrc"
-alias showconfig="bat ~/.config/.zshrc"
-alias vim="nvim"
-alias oldvim="\vim"
-
-
-
 # Pyenv : to have diff python versions globally
 PATH="~/.pyenv/versions/3.5.0/bin:${PATH}"
 eval "$(pyenv init -)"
@@ -62,4 +58,6 @@ export CPPFLAGS="-I/usr/local/opt/flex/include"
 # Fuzzy logic Vim
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+# For dotfiles
 alias config='/usr/bin/git --git-dir=/Users/ujjwal/.config/ --work-tree=/Users/ujjwal'

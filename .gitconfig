@@ -19,5 +19,5 @@
 	ci = commit
 	amend = ci
 	co = checkout
-	ac = commit -am
+	ac = !git add -A && git commit
 	unstage = reset HEAD --
