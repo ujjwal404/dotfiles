@@ -1,8 +1,7 @@
 set showmatch               " show matching
-set hlsearch
+set nohlsearch
 set ignorecase              " case insensitive
-set mouse=v                 " middle-click paste with
-set hlsearch                " highlight search
+set mouse=v                 " middle-click paste w
 set incsearch               " incremental search
 set tabstop=4               " number of columns occupied by a tab
 set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
@@ -11,20 +10,18 @@ set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
-set cc=100                  " set an 80 column border for good coding style
+set cc=150                  " set an 80 column border for good coding style
 filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
-filetype plugin on
-set cursorline              " highlight current cursorline
+"set cursorline              " highlight current cursorline
 set regexpengine=1
 set exrc
 set lazyredraw
-set t_Co=256
 set smartindent
 set expandtab
-set guicursor
+"set guicursor
 set nu
 set hidden
 set noerrorbells
@@ -42,11 +39,13 @@ set ttyfast                " Speed up scrolling in Vim
 set signcolumn=yes
 set redrawtime=10000
 set re=0
-set guifont=BitstreamVeraSansMono_NF:h13
+set guifont=SF\ Mono\ Powerline:h13
 set shortmess=a
 set cmdheight=2
 
+
 call plug#begin('~/.local/share/nvim/plugged')
+
 
 "NerdTree sidebar
 Plug 'scrooloose/nerdtree'
@@ -68,7 +67,7 @@ Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 Plug 'honza/vim-snippets'
 
 "GraphQL plugins
-" Plug 'jprise/vim-graphql'
+"Plug 'jprise/vim-graphql'
 
 "nvim-telescope
 Plug 'nvim-lua/popup.nvim'
@@ -81,7 +80,7 @@ Plug 'rbgrouleff/bclose.vim'
 
 
 "ranger, might remove?
-Plug 'francoiscabrol/ranger.vim'
+"Plug 'francoiscabrol/ranger.vim'
 
 "prettier for vim
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -93,7 +92,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 
 "coc plugin
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'severin-lemaignan/vim-minimap'
 
 "change surrounding brackets, quotes
@@ -102,7 +101,6 @@ Plug 'tpope/vim-surround'
 "airline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
-
 
 "fzf plugin
 Plug 'junegunn/fzf.vim'
@@ -115,8 +113,16 @@ Plug 'flazz/vim-colorschemes'
 Plug 'mbbill/undotree'
 Plug 'ryanoasis/vim-devicons'
 
-call plug#end()
+"deoplete nvim
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
+call plug#end()
 
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
@@ -133,10 +139,10 @@ highlight Normal guibg=NONE ctermbg=NONE
 
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
-let g:prettier#autoformat = 0
+let g:prettier#autoformat = 1
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 let g:go_def_mapping_enabled = 0
-
+let g:deoplete#enable_at_startup = 0
 
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
@@ -150,14 +156,23 @@ let g:coc_global_extensions = ['coc-solargraph']
 
 let mapleader=" "
 
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" nerd tree
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <leader>e :bnext<CR>
-nnoremap <leader>q :bprev<CR>
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
+"switch tabs
+nnoremap E :bnext<CR>
+nnoremap Q :bprev<CR>
+
+" terminal mode
 tnoremap <Esc> <C-\><C-n>
 nnoremap <c-n> :call OpenTerminal()<CR>
 tnoremap <A-h> <C-\><C-n><C-w>h
@@ -169,20 +184,20 @@ nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
-map <F5> :wall!<CR>:!sbcl --load foo.cl<CR><CR>
 
 " use jk to escape instead of esc
-inoremap jk <ESC> 
+inoremap jk <ESC>
 
 
-
-highlight ExtraWhitespace ctermbg=red guibg=red
+" highlight extra white space [ KEEP DISABLED - LOOKS UGLY ]
+" highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 au BufWinEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
 au BufWinLeave * call clearmatches()
 
+" format cpp codes using clang
 function! s:JbzClangFormat(first, last)
   let l:winview = winsaveview()
   execute a:first . "," . a:last . "!clang-format"
