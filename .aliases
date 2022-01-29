@@ -17,8 +17,9 @@ alias g="git"
 alias gpom="git push origin main"
 
 # Zsh
-alias zshconfig="vim ~/.config/.zshrc"
-alias showconfig="bat ~/.config/.zshrc"
+alias zshconfig="vim ~/.zshrc"
+alias showconfig="bat ~/.zshrc"
+alias vimconfig="cd ~/.config/nvim && vim init.vim"
 
 alias vim="nvim"
 alias oldvim="\vim"
