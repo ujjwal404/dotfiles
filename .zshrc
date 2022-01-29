@@ -32,7 +32,10 @@ plugins=(
 	)
 source $ZSH/oh-my-zsh.sh
 
-
+# to run c++ programs  
+co() { g++ -std=c++17 -O2 -o "${1%.*}" $1 -Wall; }
+run() { co $1 && ./${1%.*} & fg; }
+showTime() { co $1 && gtime -v ./${1%.*} &fg; }
 
 # Pyenv : to have diff python versions globally
 PATH="~/.pyenv/versions/3.5.0/bin:${PATH}"
