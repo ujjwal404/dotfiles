@@ -2,20 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<integer>26</integer>
+			<key>parameter</key>
+			<string>85F44C06-3982-44D1-AC84-21BA4BFEA145</string>
+			<key>title</key>
+			<string>Open iTerm</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>CommandSelection</key>
 	<false/>
 	<key>CopySelection</key>
@@ -603,7 +606,7 @@
 				<real>1</real>
 			</dict>
 			<key>Blend</key>
-			<real>0.51113180573453609</real>
+			<real>0.50670849955673758</real>
 			<key>Blink Allowed</key>
 			<true/>
 			<key>Blinking Cursor</key>
@@ -611,7 +614,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>9.6801851998730957</real>
+			<real>10.680185199873096</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -630,7 +633,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>150</integer>
+			<integer>160</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Color</key>
@@ -693,13 +696,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.93487887789433444</real>
+				<real>0.86274509803921573</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.9348907470703125</real>
+				<real>0.86274509803921573</real>
 				<key>Red Component</key>
-				<real>0.93486862470945198</real>
+				<real>0.86274509803921573</real>
 			</dict>
 			<key>Guid</key>
 			<string>85F44C06-3982-44D1-AC84-21BA4BFEA145</string>
@@ -1015,7 +1018,7 @@
 				<real>0.19769090857366042</real>
 			</dict>
 			<key>Minimum Contrast</key>
-			<real>0.33891157670454547</real>
+			<real>0.2970020325203252</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1060,13 +1063,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.88006591796875</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.84313726425170898</real>
+				<real>0.74201637043734081</real>
 				<key>Red Component</key>
-				<real>0.70196080207824707</real>
+				<real>0.61777177765907254</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -1099,7 +1102,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.27151649746192891</real>
+			<real>0.23151649746192887</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
