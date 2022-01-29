@@ -78,6 +78,8 @@ Plug 'rbgrouleff/bclose.vim'
 
 "gruvbox theme
 
+"github copilot
+Plug 'github/copilot.vim'
 
 "ranger, might remove?
 "Plug 'francoiscabrol/ranger.vim'
