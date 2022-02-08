@@ -1,10 +1,14 @@
 # Root path
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# import all the things
 for file in ~/.{path,zsh_prompt,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+# iterm2 shell integration
+
 
 # Path to my oh-my-zsh installation.
 export ZSH="/Users/ujjwal/.oh-my-zsh"
@@ -64,3 +68,5 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 # For dotfiles
 alias config='/usr/bin/git --git-dir=/Users/ujjwal/.config/ --work-tree=/Users/ujjwal'
+
+
