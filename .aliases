@@ -33,7 +33,8 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 # Merge PDF files, preserving hyperlinks
 alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
 
-
+# remove executables
+alias rmex='ls | grep -v "\." | xargs rm'
 
 
 
