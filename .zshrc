@@ -7,7 +7,7 @@ for file in ~/.{path,zsh_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-# iterm2 shell integration
+
 
 
 # Path to my oh-my-zsh installation.
