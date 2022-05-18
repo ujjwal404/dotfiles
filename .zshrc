@@ -37,7 +37,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # to run c++ programs  
-co() { g++ -std=c++17 -O2 -o "${1%.*}" $1 -Wall; }
+co() { g++-11 -std=c++17 -O2 -o "${1%.*}" $1 -Wall; }
 run() { co $1 && ./${1%.*} & fg; }
 showTime() { co $1 && gtime -v ./${1%.*} &fg; }
 
@@ -68,5 +68,4 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 # For dotfiles
 alias config='/usr/bin/git --git-dir=/Users/ujjwal/.config/ --work-tree=/Users/ujjwal'
-
 
